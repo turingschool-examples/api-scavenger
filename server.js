@@ -8,14 +8,13 @@ app.use(cors());
 app.get('/', (request, response) => {
   return response.status(200).json({
     hello: 'world',
-    message: `You have gotten to the first step! Connect the dots between these next clues you find...
-      You can use Postman to help guide you, but you must strive to write a series of fetch calls to solve this.`,
-    clues: ['/clues/0', '/clues/1', '/clues/2', '/clues/3', '/clues/4']
+    message: 'You have gotten to the first step! Write a script with a series of fetch calls to solve this without using Postman. Connect the dots between these next clues you find...',
+    clues: ['/clues/0', '/clues/1', '/clues/2', '/clues/3', '/clues/4', '/clues/5']
   });
 });
 
 app.get('/clues/:index', (request, response) => {
-  const nextURL = ['final', 'host/', 'local', '://', 'http'];
+  const nextURL = ['final', '3001/', 'host:', 'local', '://', 'http'];
 
   return response.status(200).json({clue: nextURL[request.params.index]});
 });
