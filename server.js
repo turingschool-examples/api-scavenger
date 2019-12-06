@@ -14,13 +14,21 @@ app.get('/', (request, response) => {
 });
 
 app.get('/clues/:index', (request, response) => {
-  const nextURL = ['final', '3001/', 'host:', 'local', '://', 'http'];
+  const nextURL = ['almost-there', '3001/', 'host:', 'local', '://', 'http'];
 
   return response.status(200).json({clue: nextURL[request.params.index]});
 });
 
-app.get('/final', (request, response) => {
-  return response.status(200).json({message: 'Congrats, you made it!'});
+app.get('/almost-there', (request, response) => {
+  return response.status(200).json({hint: 'The final route will be /final/:number-of-offical-http-status-codes'})
+});
+
+app.get('/final/:num', (request, response) => {
+  if (parseInt(request.params.num) === 63) {
+    return response.status(200).json({message: 'Congrats, you made it!'});
+  } else {
+    return response.status(404).json({message: 'Hmmm...I don\'t seem to know that number.'});
+  }
 });
 
 app.listen(app.get('port'), () => {
