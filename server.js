@@ -20,7 +20,7 @@ app.get('/clues/:index', (request, response) => {
 });
 
 app.get('/almost-there', (request, response) => {
-  return response.status(200).json({hint: 'The final route will be /final/:number-of-offical-http-status-codes'})
+  return response.status(200).json({hint: 'The final route will be /final/:number-of-official-http-status-codes'})
 });
 
 app.get('/final/:num', (request, response) => {
