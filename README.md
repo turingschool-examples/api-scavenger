@@ -9,6 +9,6 @@
 
 ## Your Quest
 
-Use this [repl link to begin](https://repl.it/languages/babel), start by making a GET request to `localhost:3001/`, and then using the clues from the responses, find your way through the API from there.
+Use this [repl link to begin](https://repl.it/languages/babel), start by making a GET request to `http://localhost:3001/`, and then use the clues from the responses to find your way through the API from there.
 
 Your ultimate goal is to be able to console log the message "Congrats, you made it!".
